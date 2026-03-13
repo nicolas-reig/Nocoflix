@@ -1,0 +1,73 @@
+main {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+}
+
+main h3 {
+margin: 0.5rem 0;
+}
+
+main p {
+	margin: 0;
+}
+
+video {
+	margin: 2.25rem 0;
+	width: 40%;
+}
+
+.metadata {
+	width: 50%;
+	margin: 1rem;
+}
+
+.people {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 1rem;
+}
+
+.download-btn {
+    display: inline-block;
+    cursor: pointer;
+    margin-left: 1rem;
+    transition: opacity 0.2s;
+	filter: drop-shadow(0.075em 0.075em 0.06em #000)
+}
+
+.download-btn:hover {
+    opacity: 0.8;
+}
+
+@media (max-width: 850px) {
+	header {
+    	padding: 0.25rem;
+    	padding-left: 0.5rem;
+	}
+	main {
+		flex-direction: column-reverse;
+	}
+	video {
+		width: 100%;
+		margin: 0;
+	}
+	.metadata {
+		margin: 0;
+		width: 100%;
+	}
+	.directors {
+		text-align: center;
+	}
+	.studio {
+		text-align: right;
+	}
+
+	p {
+		font-size: 0.8rem;
+	}
+
+	h2 {
+		font-size: 1.25rem;	
+	}
+}
