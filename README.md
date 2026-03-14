@@ -88,7 +88,7 @@ At [nocoflix.nocoweb.es](https://nocoflix.nocoweb.es) you can find a live demo w
 				2013
 			</year>
 			<duration>
-				6344.921917
+				6345   <!-- Duration in seconds -->
 			</duration>
 			<genre>
 				Action, Adventure, Drama
@@ -111,16 +111,16 @@ At [nocoflix.nocoweb.es](https://nocoflix.nocoweb.es) you can find a live demo w
 				<producer>Justin Nappi</producer>
 				<producer>Teddy Schwarzman</producer>
 			</producers>
-				<studios>
-					<studio>Before the Door Pictures</studio>
-					<studio>Washington Square Films</studio>
-					<studio>Black Bear Pictures</studio>
-					<studio>Treehouse Pictures</studio>
-					<studio>Sudden Storm Productions</studio>
-					<studio>FilmNation Entertainment</studio>
-					<studio>Roadside Attractions</studio>
-					<studio>Universal Pictures</studio>
-					<studio>Lionsgate</studio>
-					<studio>Baja Studios</studio>
-					</studios>
+			<studios>
+				<studio>Before the Door Pictures</studio>
+				<studio>Washington Square Films</studio>
+				<studio>Black Bear Pictures</studio>
+				<studio>Treehouse Pictures</studio>
+				<studio>Sudden Storm Productions</studio>
+				<studio>FilmNation Entertainment</studio>
+				<studio>Roadside Attractions</studio>
+				<studio>Universal Pictures</studio>
+				<studio>Lionsgate</studio>
+				<studio>Baja Studios</studio>
+			</studios>
 		</metadata>
