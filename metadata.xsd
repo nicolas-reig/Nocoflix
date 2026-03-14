@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="metadata">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="title" type="xs:string"/>
+        <xs:element name="year" type="xs:gYear"/>
+        <xs:element name="duration" type="xs:decimal"/>
+        <xs:element name="genre" type="xs:string"/>
+        <xs:element name="description" type="xs:string"/>
+        <xs:element name="cast">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="actor" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="directors">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="director" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="screenwriters">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="writer" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="producers">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="producer" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="studios">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="studio" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
