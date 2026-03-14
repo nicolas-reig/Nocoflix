@@ -10,8 +10,8 @@ This streaming service is a minimalist web-page using php for the backend to dyn
 
 At [nocoflix.nocoweb.es](https://nocoflix.nocoweb.es) you can find a live demo with public domain movies.   
 
-<img src="https://nocoweb.es/assets/nocoflix_startpage_screenshot" alt="Start Page" width="45%">
-<img src="https://nocoweb.es/assets/nocoflix_player_screenshot" alt="Player" width="45%">
+<img src="https://nocoweb.es/assets/nocoflix_startpage_screenshot.png" alt="Start Page" width="45%">
+<img src="https://nocoweb.es/assets/nocoflix_player_screenshot.png" alt="Player" width="45%">
 
 # Usage
 
