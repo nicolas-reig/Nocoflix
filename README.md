@@ -6,12 +6,8 @@ Self-hosted streaming service for watching owned movies on the go in any browser
 
 At [nocoflix.nocoweb.es](https://nocoflix.nocoweb.es) you can find a live demo with public domain movies.   
 
-<<<<<<< HEAD
 <img src="https://nocoweb.es/assets/nocoflix_startpage_screenshot.png" alt="Start Page" width="49%">
 <img src="https://nocoweb.es/assets/nocoflix_player_screenshot.png" alt="Player" width="49%">
-=======
-<img src="https://nocoweb.es/assets/nocoflix_startpage_screenshot.png" alt="Start Page" width="45%"><img src="https://nocoweb.es/assets/nocoflix_player_screenshot.png" alt="Player" width="45%">
->>>>>>> 761ea181aba7b028d58a110cac2a23efe3df5318
 
 ## Technical overview
 
