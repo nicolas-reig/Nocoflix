@@ -6,8 +6,12 @@ Self-hosted streaming service for watching owned movies on the go in any browser
 
 At [nocoflix.nocoweb.es](https://nocoflix.nocoweb.es) you can find a live demo with public domain movies.   
 
+<<<<<<< HEAD
 <img src="https://nocoweb.es/assets/nocoflix_startpage_screenshot.png" alt="Start Page" width="49%">
 <img src="https://nocoweb.es/assets/nocoflix_player_screenshot.png" alt="Player" width="49%">
+=======
+<img src="https://nocoweb.es/assets/nocoflix_startpage_screenshot.png" alt="Start Page" width="45%"><img src="https://nocoweb.es/assets/nocoflix_player_screenshot.png" alt="Player" width="45%">
+>>>>>>> 761ea181aba7b028d58a110cac2a23efe3df5318
 
 ## Technical overview
 
@@ -134,6 +138,7 @@ For example:
 				<producer>Justin Nappi</producer>
 				<producer>Teddy Schwarzman</producer>
 			</producers>
+<<<<<<< HEAD
 			<studios>
 				<studio>Before the Door Pictures</studio>
 				<studio>Washington Square Films</studio>
@@ -147,3 +152,18 @@ For example:
 				<studio>Baja Studios</studio>
 			</studios>
 		</metadata>
+=======
+				<studios>
+					<studio>Before the Door Pictures</studio>
+					<studio>Washington Square Films</studio>
+					<studio>Black Bear Pictures</studio>
+					<studio>Treehouse Pictures</studio>
+					<studio>Sudden Storm Productions</studio>
+					<studio>FilmNation Entertainment</studio>
+					<studio>Roadside Attractions</studio>
+					<studio>Universal Pictures</studio>
+					<studio>Lionsgate</studio>
+					<studio>Baja Studios</studio>
+					</studios>
+		</metadata>
+>>>>>>> 761ea181aba7b028d58a110cac2a23efe3df5318
