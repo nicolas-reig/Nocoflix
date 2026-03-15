@@ -1,25 +1,35 @@
 # Nocoflix
 
-Homemade streaming service for watching owned movies on the go in any browser.
+Self-hosted streaming service for watching owned movies on the go in any browser.
 
-# Technical overview
-
-This streaming service is a minimalist web-page using php for the backend to dynamically serve the html.
-
-# Demo
+## Demo
 
 At [nocoflix.nocoweb.es](https://nocoflix.nocoweb.es) you can find a live demo with public domain movies.   
 
-<img src="https://nocoweb.es/assets/nocoflix_startpage_screenshot.png" alt="Start Page" width="45%">
-<img src="https://nocoweb.es/assets/nocoflix_player_screenshot.png" alt="Player" width="45%">
+<img src="https://nocoweb.es/assets/nocoflix_startpage_screenshot.png" alt="Start Page" width="49%">
+<img src="https://nocoweb.es/assets/nocoflix_player_screenshot.png" alt="Player" width="49%">
 
-# Usage
+## Technical overview
 
-1. Setup a web server using somethig like apache or ngninx.
-2. Install PHP and set it up to work with your web server.
-3. Edit the config.php file to define the path where your media will live
-4. Your media will need to be segmented according to the HLS (HTTP Live Stream) format. See [ffmpeg](https://ffmpeg.org/ffmpeg-formats.html#hls-1) for documentation.
-5. Place your media in the chosen path with the following file structure:
+This streaming service is a minimalist streaming service built with PHP using the HTTP Live Streming (HLS) protocol.
+
+The project intentionally avoids heavy frameworks and libraries, relying instead on:   
+- PHP for backend logic
+- HLS (m3u8 playlists + TS video segments) for video streaming
+- XML metadata files
+- Standard HTML/CSS/JS
+
+## Usage
+
+1. Setup a web server (Apache, Nginx, etc.).
+2. Install PHP and configure it with your web server.
+3. Edit ´config.php´ to define the path where your media will live.
+4. Your media will need to be segmented according to the HLS (HTTP Live Stream) format. See [ffmpeg](https://ffmpeg.org/ffmpeg-formats.html##hls-1) for documentation.
+5. Place your Movies in the chosen path
+
+## Media Structure
+
+Place your media in the chosen path with the following file structure:
 
 		media
 		├── Movie 1
@@ -35,19 +45,19 @@ At [nocoflix.nocoweb.es](https://nocoflix.nocoweb.es) you can find a live demo w
 		│   ├── variant_stream2
 		│   │   └── ...
 		│   ├── ...
-		│   ├── subtitle_language1
-		│   │   ├── subtitle_language.m3u8
+		│   ├── language1
+		│   │   ├── languageSubtitle_.m3u8
 		│   │   ├── sub1.vtt
 		│   │   ├── sub2.vtt
 		│   │   ├── sub3.vtt
 		│   │   └── ...
-		│   ├── subtitle_language2
+		│   ├── language2
 		│   │   └── ...
 		│   └── ...
 		├── Movie 2
 		│   └── ...
 		└── ...
-	For example:
+For example:
 
 		media
 		├── Night of The Living Dead
@@ -69,6 +79,7 @@ At [nocoflix.nocoweb.es](https://nocoflix.nocoweb.es) you can find a live demo w
 		│   │   ├── sub_eng3.vtt
 		│   │   └── ...
 		│   └── spa
+		│		├── spaSubtitle.m3u8
 		│       ├── sub_spa1.vtt
 		│       ├── sub_spa2.vtt
 		│       ├── sub_spa3.vtt
@@ -76,8 +87,20 @@ At [nocoflix.nocoweb.es](https://nocoflix.nocoweb.es) you can find a live demo w
 		├── Charade
 		│   └── ...
 		└── ...
-6. The metadata should follow the strucute described in [metadata.xsd](metadata.xsd).   
-	For example:
+
+Each movie directory contains:
+
+- `master.m3u8` — HLS master playlist
+- `thumbnail.jpg` — movie poster
+- `metadata.xml` — movie metadata
+- `variant_stream*` — video bitrate variants
+- `language*` — subtitle tracks in WebVTT format
+
+## Metadata Format
+The metadata should follow the structure described in [metadata.xsd](metadata.xsd).
+
+	
+For example:
 
 		<?xml version="1.0"?>
 		<metadata>
