@@ -57,7 +57,7 @@
 	<main>
 		<div class="metadata">
 		<?php
-				$xml = simplexml_load_file(MOVIES_PATH . $movie . $season . $episode . "/metadata.xml");
+				$xml = simplexml_load_file(MOVIES_PATH . "$movie/$season/$episode/metadata.xml");
 				$year = $xml->year;
 				$duration = (int)$xml->duration;
 				$duration = floor($duration / 3600) . 'h ' . (($duration / 60) % 60) . 'mins';
