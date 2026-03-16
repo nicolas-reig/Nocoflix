@@ -32,10 +32,12 @@
 				$episodes = glob(MOVIES_PATH . "$series/$season/*", GLOB_ONLYDIR);
 				foreach ($episodes as $episode) {
 					$episode = basename($episode);
+					$URLseries = urlencode(basename($series));
+					$URLseason = urlencode(basename($season));
 					$URLepisode = urlencode($episode);
+					$URLpath = urlencode("$series/$season/$episode");
 					$title = str_replace('_', ':', $episode);
-					// TODO
-					echo "<a href='player/?movie=$URLepisode' class='movie'><img src='/serve.php?movie=$URLepisode&file=thumbnail.jpg'><h3>$title</h3></a>";
+					echo "<a href='player/?movie=$URLseries&season=$URLseason&episode=$URLepisode' class='movie'><img src='/serve.php?movie=$URLpath&file=thumbnail.jpg'><h3>$title</h3></a>";
 				}
 			}
 		?>

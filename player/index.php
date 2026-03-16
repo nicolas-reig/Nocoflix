@@ -4,6 +4,13 @@
 	if (isset($_GET['movie'])) {
 		$URLmovie = rawurlencode(basename($_GET['movie']));
 		$movie = htmlspecialchars(urldecode(basename($_GET['movie'])), ENT_QUOTES, 'UTF-8');
+		$season = null;
+		$episode = null;
+		if (isset($_GET['season']) && isset($_GET['episode'])){
+			$URLmovie = rawurlencode(basename($_GET['movie']))."/".rawurlencode(basename($_GET['season']))."/".rawurlencode(basename($_GET['episode']));
+			$episode = htmlspecialchars(urldecode(basename($_GET['episode'])), ENT_QUOTES, 'UTF-8');
+			$season = htmlspecialchars(urldecode(basename($_GET['season'])), ENT_QUOTES, 'UTF-8');
+		}
 		$cookieName = 'video_time_' . $URLmovie;
 	} else {
 		header('Location: /');
@@ -32,11 +39,17 @@
 </head>
 <body>
 	<header>
-		<?php echo "<h1>".str_replace('_',':',$movie)."
-    <a href='download.php?movie=$URLmovie' class='download-btn'>
-		<img src='/download.svg' style='height: 2.5rem; transform: translateY(10px); margin-left: 5px;' alt='Download'>
-    </a>
-</h1>"; ?>
+		<?php echo 
+		"<h1>"
+			.str_replace('_',':',$movie)."
+			<a href='download.php?movie=$URLmovie' class='download-btn'>
+				<img src='/download.svg' style='height: 2.5rem; transform: translateY(10px); margin-left: 5px;' alt='Download'>
+			</a>
+		</h1>"; 
+		if ($season && $episode) {
+			echo "<h2>" . str_replace('eason ', '', $season) . " - " . str_replace('_', ':', $episode) . "</h2>";
+		}
+		?>
 		<nav class="navigation">
 			<a href="/">Back</a>
 		</nav>
@@ -44,7 +57,7 @@
 	<main>
 		<div class="metadata">
 		<?php
-				$xml = simplexml_load_file(MOVIES_PATH . "$movie/metadata.xml");
+				$xml = simplexml_load_file(MOVIES_PATH . $movie . $season . $episode . "/metadata.xml");
 				$year = $xml->year;
 				$duration = (int)$xml->duration;
 				$duration = floor($duration / 3600) . 'h ' . (($duration / 60) % 60) . 'mins';
